@@ -1,1 +1,1 @@
-Application for outup PDF files
+Application that outputs PDF files
