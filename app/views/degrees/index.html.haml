@@ -1,0 +1,5 @@
+%h2 Degrees
+=link_to 'New Degree', new_degree_path
+%ul
+  - @degrees.each do |degree|
+    %li= degree.name

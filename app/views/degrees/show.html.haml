@@ -1,0 +1,5 @@
+%h2= @degree.name
+=link_to 'Edit', edit_degree_path(@degree)
+= link_to 'Delete', degree_path(@degree), :method => :delete, :confirm => 'Are you sure?'
+%h3 Courses
+=link_to 'New Course', new_degree_course_path(@degree)

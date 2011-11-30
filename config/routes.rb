@@ -1,4 +1,6 @@
 Rid::Application.routes.draw do
   resources :universities
-  resources :courses
+  resources :degrees do
+    resources :courses
+  end
 end

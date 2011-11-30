@@ -1,5 +1,7 @@
 FactoryGirl.define do
   factory :course do
-    name "Social Communication"
+    code "CS-5612"
+    name "Modern Society"
+    association :degree
   end
 end

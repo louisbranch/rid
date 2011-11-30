@@ -1,53 +1,20 @@
 class CoursesController < ApplicationController
-
-  def index
-    
-  end
-  
-  def show
-    @course = Course.find(params[:id])
-  end
   
   def new
-    @course = Course.new
+    @degree = Degree.find(params[:degree_id])
+    @course = @degree.courses.build    
   end
   
   def create
-    @course = Course.new(params[:course])
+    @degree = Degree.find(params[:degree_id])
+    @course = @degree.courses.build(params[:course])
     if @course.save
       flash[:notice] = 'Course Created!'
-      redirect_to courses_path
+      redirect_to degree_path(@degree)
     else
-      show_errors(@course)
-      redirect_to new_course_path
+      show_errors(@degree)
+      redirect_to new_degree_course_path(@degree)
     end
   end
   
-  def edit
-    @course = Course.find(params[:id])
-  end
-  
-  def update
-    @course = Course.find(params[:id])
-    @course.update_attributes(params[:course])
-    if @course.save
-      flash[:notice] = 'Course Updated!'
-      redirect_to courses_path
-    else
-      show_errors(@course)
-      redirect_to edit_course_path
-    end
-  end
-  
-  def destroy
-    @course = Course.find(params[:id])
-    if @course.destroy
-      flash[:notice] = 'Course Deleted!'
-      redirect_to courses_path
-    else
-      show_errors(@course)
-      redirect_to course_path(@course)
-    end
-  end
-
 end
