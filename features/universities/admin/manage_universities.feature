@@ -18,12 +18,13 @@ Feature: Manage universities
 		Given I go to the new university page
 		And I fill in "Name" with ""
 		When I click on "Create University"
-		Then I should be redirected to the new university page
+		Then I should have 0 universities
+		And I should be redirected to the new university page
 		And I should see "Name can't be blank"
 	
 	Scenario: Editing a university
 		Given I have 1 university
-		And I go to this project page
+		And I go to this university page
 		And I click on "Edit"
 		And I fill in the following:
 		  | Acronymous | Uerj                                     |
@@ -34,7 +35,7 @@ Feature: Manage universities
 	
 	Scenario: Editing a university with required blank fields
 		Given I have 1 university
-		And I go to this project edit page
+		And I go to this university edit page
 		And I fill in "Name" with ""
 		When I click on "Update University"
 		Then I should be redirected to this university edit page
@@ -42,7 +43,7 @@ Feature: Manage universities
 		
 	Scenario: Deleting a university
 		Given I have 1 university
-		And I go to this project page
+		And I go to this university page
 		When I click on "Delete"
 		Then I should have 0 university
 		And I should be redirected to the universities page

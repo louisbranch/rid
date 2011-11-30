@@ -3,7 +3,7 @@ Given /^I have (\d+) (\w*)$/ do |count, model|
   constant = model.singularize.camelize.constantize
   model = model.singularize.to_sym
   count.times do
-    @resource = Factory(model)
+    Factory(model)
   end
   constant.count.should == count
 end
