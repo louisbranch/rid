@@ -5,10 +5,11 @@ end
 
 Given /^I go to a univeristy page$/ do
   @university = Factory(:university)
-  visit university_path(@university)
+  visit universities_path(@university)
+  click_on @university.name
 end
 
-Given /^I go to the edit page of a university$/ do
+Given /^I go to the a university edit page$/ do
   steps %{ Given I go to a univeristy page }
   click_on('Edit')
 end
@@ -29,7 +30,7 @@ When /^I delete this university$/ do
   click_on('Delete')
 end
 
-Then /^I should see this university information$/ do
+Then /^I should see the new university$/ do
   University.count.should == 1
   current_path.should == university_path(University.first)
   page.should have_content 'University Created!'

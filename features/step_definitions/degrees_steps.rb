@@ -5,10 +5,11 @@ end
 
 Given /^I go to a degree page$/ do
   @degree = Factory(:degree)
-  visit degree_path(@degree)
+  visit degrees_path
+  click_on @degree.name
 end
 
-Given /^I go to the edit page of a degree$/ do
+Given /^I go to a degree edit page$/ do
   steps %{ Given I go to a degree page }
   click_on('Edit')
 end
@@ -28,7 +29,7 @@ When /^I delete this degree$/ do
   click_on('Delete')
 end
 
-Then /^I should see this degree listed on the degrees page$/ do
+Then /^I should see the new degree listed on the degrees page$/ do
   Degree.count.should == 1
   current_path.should == degrees_path
   page.should have_content 'Degree Created!'

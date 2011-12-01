@@ -3,3 +3,6 @@
 = link_to 'Delete', degree_path(@degree), :method => :delete, :confirm => 'Are you sure?'
 %h3 Courses
 =link_to 'New Course', new_degree_course_path(@degree)
+%ul
+  - @courses.each do |course|
+    %li= link_to course.name, degree_course_path(@degree, course)
