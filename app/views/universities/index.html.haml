@@ -2,4 +2,6 @@
 =link_to 'New University', new_university_path
 %ul
   - @universities.each do |university|
-    %li= link_to university.name, university_path(university)
+    %li
+      = university.acronymous unless nil?
+      = link_to university.name, university_path(university)

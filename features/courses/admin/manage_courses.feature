@@ -6,17 +6,17 @@ Feature: Manage courses
 	Background:
 		Given I go to a degree page
 		
-	Scenario: Create a new course
+	Scenario: Creating a new course
 		Given I go to the new course page
 		When I create a new course
 		Then I should see the new course listed on the degree page
 	
-	Scenario: Edit a course
+	Scenario: Editing a course
 		Given I go to a course edit page
 		When I update this course
 		Then I should see this course with the information updated
 		
-	Scenario: Delete a course
+	Scenario: Deleting a course
 		Given I go to a course page
 		When I delete this course
 		Then this course should not exist anymore

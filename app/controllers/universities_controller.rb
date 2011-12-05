@@ -16,7 +16,7 @@ class UniversitiesController < ApplicationController
     @university = University.new(params[:university])
     if @university.save
       flash[:notice] = "University Created!"
-      redirect_to university_path(@university)      
+      redirect_to universities_path
     else
       show_errors(@university)
       redirect_to new_university_path
@@ -32,7 +32,7 @@ class UniversitiesController < ApplicationController
     @university.update_attributes(params[:university])
     if @university.save
       flash[:notice] = "University Updated!"
-      redirect_to university_path(@university)      
+      redirect_to universities_path      
     else
       show_errors(@university)
       redirect_to edit_university_path

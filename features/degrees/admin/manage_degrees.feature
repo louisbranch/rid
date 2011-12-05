@@ -3,7 +3,7 @@ Feature: Manage degrees
 	As a admin
 	I want to create, edit and delete degrees
 	
-	Scenario: Create a new degree
+	Scenario: Creating a new degree
 		Given I go to the new degree page
 		When I create a new degree
 		Then I should see the new degree listed on the degrees page

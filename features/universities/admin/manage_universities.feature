@@ -3,10 +3,10 @@ Feature: Manage universities
 	As a admin
 	I want to create, edit and delete universities
 	
-	Scenario: Create a new university
+	Scenario: Creating a new university
 		Given I go to the new university page
 		When I create a university
-		Then I should see the new university
+		Then I should see the new university listed on the universities page
 
 	Scenario: Editing a university
 		Given I go to the a university edit page

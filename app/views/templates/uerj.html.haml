@@ -1,0 +1,46 @@
+!!!
+%html
+  %head
+    %title Uerj Template
+    = stylesheet_link_tag "templates", :media => 'all'
+  %body#uerj
+    %div#wrapper
+      %header
+        %div#imgs_left
+          =image_tag(asset_path("uerj/uerj.gif"))
+        %div#imgs_right
+          =image_tag(asset_path("uerj/aluno.gif")) 
+          %div
+            =image_tag(asset_path("uerj/voltar.gif"))
+            =image_tag(asset_path("uerj/imprimir.gif"))
+        %h1 RID - Resultado de Inscrição em Disciplinas
+        %h2= @template.date
+        %div#student= @template.student
+        %div#timestamp= @template.timestamp
+        %div#courses
+          %table
+            %thead
+              %tr
+                %th#course Disciplina
+                %th#credits Créditos
+                %th#hours Carga Horária
+                %th#ramif Ramif.
+                %th#class Turma
+                %th#schedule Horário
+            %tbody
+              %tr
+                %td#accepted{:colspan => "6"} Inscrição ACEITA
+              - @courses.each do |course|
+                =render :partial => 'uerj_row', :locals => { :course => course }
+              %tr
+                %td#ramif{:colspan => "6"} Nome da Ramificação
+              %tr
+                %td#ramif_name{:colspan => "6"}= "#{@template.ramification} - #{@template.degree.name}"
+      %footer
+        :markdown
+          Mensagens para o Aluno
+
+          1. Alunos de Licenciatura: as AACC devem ser cumpridas no máximo até a conclusão da última disciplina exigida para o término do curso.   
+          2. O RID é o espelho de sua inscrição em disciplinas e não sofre alteração. Se a inscrição for alterada (ex: SAID), consulte "Disciplinas em curso". 
+          3. Mantenha atualizado seu e-mail, seu telefone e seu endereço na opção RECADASTRAMENTO, do Aluno Online. Atualize os outros dados no Protocolo DAA - Sala 1093-F. 
+          4. Turmas com menos de 10 (dez) alunos poderão ser canceladas sem aviso prévio. 

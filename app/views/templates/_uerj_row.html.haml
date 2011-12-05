@@ -1,0 +1,10 @@
+%tr
+  %td.course= course.name
+  %td= course.credits
+  %td= course.hours
+  %td= @template.ramification
+  %td= course.classroom
+  %td
+    %ul
+      - course.schedules.each do |schedule|
+        %li= schedule
