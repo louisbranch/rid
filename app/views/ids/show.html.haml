@@ -1,2 +1,4 @@
-=link_to 'Print', @template
-%iframe{:src => @template, :id => 'print'}
+=link_to 'Imprimir', @template_path, :id => 'print_template'
+- content_for :template do
+  %div#template
+    =render :template => 'templates/uerj'

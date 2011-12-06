@@ -17,13 +17,13 @@ end
 When /^I create a university$/ do
   fill_in 'Acronymous', :with => 'Uerj'
   fill_in 'Name', :with => 'Universidade do Estado do Rio de Janeiro'
-  click_on('Criar University')
+  click_on('Create University')
 end
 
 When /^I update this university$/ do
   fill_in 'Acronymous', :with => 'UFRJ'
   fill_in 'Name', :with => 'Universidade Federal do Rio de Janeiro'
-  click_on('Atualizar University')
+  click_on('Update University')
 end
 
 When /^I delete this university$/ do

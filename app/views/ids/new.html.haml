@@ -1,13 +1,11 @@
 %h2 Request an ID
 =form_for @id, :url => ids_path do |f|
-  =f.label :name, 'Name'
+  =f.label :name, 'Nome'
   =f.text_field :name
-  =f.label :email, 'Email'
-  =f.text_field :email
   =f.check_box :terms_of_service
-  =f.label :terms_of_service, 'I Agree'
-  =f.label :university_id, 'University'
+  =f.label :terms_of_service, 'Eu Aceito'
+  =f.label :university_id, 'Universidade'
   =f.collection_select :university_id, University.order(:name), :id, :name
-  =f.label :degree_id, 'Degree'
+  =f.label :degree_id, 'Curso'
   =f.collection_select :degree_id, Degree.order(:name), :id, :name
-  =f.submit 'Create'
+  =f.submit 'Criar'

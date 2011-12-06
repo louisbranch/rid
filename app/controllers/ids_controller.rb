@@ -2,7 +2,9 @@ class IdsController < ApplicationController
 
   def show
     @id = Id.find(params[:id])
-    @template= @id.template_path
+    @template_path = @id.template_path
+    @template = Uerj.new(params[:id])
+    @courses = @template.courses
   end
   
   def new
@@ -12,7 +14,7 @@ class IdsController < ApplicationController
   def create
     @id = Id.new(params[:id])
     if @id.save
-      flash[:notice] = "Your ID was created!"
+      flash[:notice] = "Carteirinha Criada!"
       redirect_to id_path(@id)
     else
       show_errors(@id)

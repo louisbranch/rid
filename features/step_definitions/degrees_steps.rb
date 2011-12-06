@@ -16,12 +16,12 @@ end
 
 When /^I create a new degree$/ do
   fill_in 'Name', :with => 'Computer Science'
-  click_on('Criar Degree')
+  click_on('Create Degree')
 end
 
 When /^I update this degree$/ do
   fill_in 'Name', :with => 'Sociology'
-  click_on('Atualizar Degree')
+  click_on('Update Degree')
 end
 
 When /^I delete this degree$/ do

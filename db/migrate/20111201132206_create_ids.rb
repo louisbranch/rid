@@ -2,7 +2,6 @@ class CreateIds < ActiveRecord::Migration
   def change
     create_table :ids do |t|
       t.string :name
-      t.string :email
       t.integer :degree_id
       t.integer :university_id
 

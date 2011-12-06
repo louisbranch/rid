@@ -1,5 +1,4 @@
 class TemplatesController < ApplicationController
-  layout false
   
   def uerj
     @template = Uerj.new(params[:id])

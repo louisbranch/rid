@@ -15,12 +15,12 @@ end
 
 When /^I create a new course$/ do
   fill_in 'Name', :with => 'Artificial Intelligence'
-  click_on('Criar Course')
+  click_on('Create Course')
 end
 
 When /^I update this course$/ do
   fill_in 'Name', :with => 'Human Computer Interaction'
-  click_on('Atualizar Course')
+  click_on('Update Course')
 end
 
 When /^I delete this course$/ do

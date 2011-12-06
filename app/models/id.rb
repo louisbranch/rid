@@ -4,7 +4,6 @@ class Id < ActiveRecord::Base
   belongs_to :degree
   
   validates :name, :presence => true
-  validates :email, :format => { :with => /^[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,4}$/i }
   validates :terms_of_service, :acceptance => true
   
   def template_path    

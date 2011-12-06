@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(:version => 20111201132206) do
 
   create_table "ids", :force => true do |t|
     t.string   "name"
-    t.string   "email"
     t.integer  "degree_id"
     t.integer  "university_id"
     t.datetime "created_at"

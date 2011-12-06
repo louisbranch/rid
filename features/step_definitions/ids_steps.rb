@@ -3,16 +3,17 @@ Given /^I go to new ID page$/ do
 end
 
 When /^I request a new ID$/ do
-  fill_in 'Name', :with => 'Luiz Branco'
-  fill_in 'Email', :with => 'artfikan@gmail.com'
-  select 'Uerj', :from => 'University'
-  select 'Social Communication', :from => 'Degree'
-  check 'I Agree'
-  click_on 'Create'
+  fill_in 'Nome', :with => 'Luiz Branco'
+  select 'Uerj', :from => 'Universidade'
+  select 'Social Communication', :from => 'Curso'
+  check 'Eu Aceito'
+  click_on 'Criar'
 end
 
 Then /^I should receive the new ID$/ do
   Id.count.should == 1
   current_path.should == id_path(Id.first)
-  page.should have_content 'Your ID was created!'
+  page.should have_content 'Carteirinha Criada!'
+  click_on 'Imprimir'
+  current_path.should == '/templates/uerj/1'
 end

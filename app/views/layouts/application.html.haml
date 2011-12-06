@@ -6,9 +6,10 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-  %div#wrapper
-    %h1 RID
-    = render :partial => 'shared/flash_msgs'
-    = yield
+    %div#wrapper
+      %h1 RID
+      = render :partial => 'shared/flash_msgs'
+      = yield
+    = yield :template
     
 
