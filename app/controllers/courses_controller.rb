@@ -27,8 +27,7 @@ class CoursesController < ApplicationController
   
   def update
     @course = Course.find(params[:id])
-    @course.update_attributes(params[:course])
-    if @course.save
+    if @course.update_attributes(params[:course])
       flash[:notice] = 'Course Updated!'
       redirect_to degree_path(@degree)
     else

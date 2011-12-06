@@ -31,8 +31,7 @@ class DegreesController < ApplicationController
   
   def update
     @degree = Degree.find(params[:id])
-    @degree.update_attributes(params[:degree])
-    if @degree.save
+    if @degree.update_attributes(params[:degree])
       flash[:notice] = 'Degree Updated!'
       redirect_to degrees_path
     else

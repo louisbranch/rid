@@ -30,8 +30,7 @@ class UniversitiesController < ApplicationController
   
   def update
     @university = University.find(params[:id])
-    @university.update_attributes(params[:university])
-    if @university.save
+    if @university.update_attributes(params[:university])
       flash[:notice] = "University Updated!"
       redirect_to universities_path      
     else
