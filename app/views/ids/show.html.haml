@@ -1,4 +1,8 @@
-=link_to 'Imprimir', @template_path, :id => 'print_template'
+%h2 Minha Carteirinha
+:markdown
+  *Importante:* Antes de imprimir o documento, desabilite na tela de impressão a opção de: 'Imprimir Headers e Footers'
+=link_to 'Imprimir', @template_path, :id => 'print_template', :class => 'button'
+=link_to 'Criar outra carteirinha', new_id_path
 - content_for :template do
   %div#template
     =render :template => 'templates/uerj'

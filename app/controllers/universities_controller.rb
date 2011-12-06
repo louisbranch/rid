@@ -1,4 +1,5 @@
 class UniversitiesController < ApplicationController
+  before_filter :authorize
   
   def index
     @universities = University.all

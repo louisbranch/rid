@@ -6,9 +6,13 @@ Rid::Application.routes.draw do
   end
   
   resources :ids, :only => [:show, :new, :create]
+  resources :sessions, :only => [:create]
+  resources :terms, :only => [:index]
     
   root :to => "ids#new"
   
+  match "login" => "sessions#new"
+  match "logout" => "sessions#destroy"
   match ':controller((/:action)(/:id))'
   
 end

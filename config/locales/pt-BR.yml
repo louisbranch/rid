@@ -227,7 +227,11 @@
       #university: Universidade
       #degree: Curso
       #courses: Matéria
-      
+    attributes:
+      id:
+        name: "Nome"
+        terms_of_service: "Termo de Serviço"
+        
     errors:
       template:
         header:

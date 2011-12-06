@@ -3,6 +3,9 @@ Feature: Manage degrees
 	As a admin
 	I want to create, edit and delete degrees
 	
+	Background:
+		Given I am logged in
+	
 	Scenario: Creating a new degree
 		Given I go to the new degree page
 		When I create a new degree

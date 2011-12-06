@@ -21,10 +21,10 @@ class Uerj < Template
   def courses
     list = []
     sch = schedules
-    courses = Course.all.sort_by { rand }.slice(0, rand(5) + 2)
+    courses = Course.all.sort_by { rand }.slice(0, rand(3) + 2)
     courses.each do |course|
       course = UerjCourse.new(course)
-      course.schedules = sch.pop(rand(3) + 2)
+      course.schedules = sch.pop(rand(2) + 2)
       list << course
     end
     list

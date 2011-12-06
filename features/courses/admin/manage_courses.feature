@@ -4,7 +4,8 @@ Feature: Manage courses
 	I want to create, edit and destroy courses
 	
 	Background:
-		Given I go to a degree page
+		Given I am logged in
+		And I go to a degree page
 		
 	Scenario: Creating a new course
 		Given I go to the new course page

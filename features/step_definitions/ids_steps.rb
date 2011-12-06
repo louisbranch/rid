@@ -6,7 +6,7 @@ When /^I request a new ID$/ do
   fill_in 'Nome', :with => 'Luiz Branco'
   select 'Uerj', :from => 'Universidade'
   select 'Social Communication', :from => 'Curso'
-  check 'Eu Aceito'
+  check 'Eu concordo com os'
   click_on 'Criar'
 end
 

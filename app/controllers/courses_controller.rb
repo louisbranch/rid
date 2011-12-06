@@ -1,5 +1,6 @@
 class CoursesController < ApplicationController
-  before_filter :find_degree  
+  before_filter :authorize
+  before_filter :find_degree
   
   def show
     @course = Course.find(params[:id])

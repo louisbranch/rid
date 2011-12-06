@@ -25,7 +25,6 @@ When /^I update this degree$/ do
 end
 
 When /^I delete this degree$/ do
-  visit degree_path(@degree)
   click_on('Delete')
 end
 

@@ -1,4 +1,5 @@
 class DegreesController < ApplicationController
+  before_filter :authorize
 
   def index
     @degrees = Degree.all

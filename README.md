@@ -1,1 +1,1 @@
-Application that outputs PDF files
+Application that mimics an University ID generator

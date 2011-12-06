@@ -1,11 +1,13 @@
-%h2 Request an ID
+%h2 Criar uma Carterinha
 =form_for @id, :url => ids_path do |f|
   =f.label :name, 'Nome'
   =f.text_field :name
-  =f.check_box :terms_of_service
-  =f.label :terms_of_service, 'Eu Aceito'
   =f.label :university_id, 'Universidade'
-  =f.collection_select :university_id, University.order(:name), :id, :name
+  =f.collection_select :university_id, University.order(:name), :id, :acronymous
   =f.label :degree_id, 'Curso'
   =f.collection_select :degree_id, Degree.order(:name), :id, :name
-  =f.submit 'Criar'
+  %div#terms
+    =f.check_box :terms_of_service
+    =f.label :terms_of_service, 'Eu concordo com os'
+    =link_to 'Termos de Serviço', terms_path
+  =f.submit 'Criar', :class => 'button'

@@ -18,7 +18,7 @@ class UerjCourse
   end
   
   def classroom
-    rand(5) + 1
+    rand(3) + 1
   end
   
 end

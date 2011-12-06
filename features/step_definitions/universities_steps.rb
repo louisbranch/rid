@@ -5,16 +5,16 @@ end
 
 Given /^I go to a univeristy page$/ do
   @university = Factory(:university)
-  visit universities_path(@university)
+  visit universities_path
   click_on @university.name
 end
 
-Given /^I go to the a university edit page$/ do
+Given /^I go to a university edit page$/ do
   steps %{ Given I go to a univeristy page }
   click_on('Edit')
 end
 
-When /^I create a university$/ do
+When /^I create a new university$/ do
   fill_in 'Acronymous', :with => 'Uerj'
   fill_in 'Name', :with => 'Universidade do Estado do Rio de Janeiro'
   click_on('Create University')
