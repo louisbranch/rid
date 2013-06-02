@@ -13,7 +13,6 @@ gem 'jquery-rails'
 gem 'execjs'
 gem 'haml'
 gem 'haml-rails'
-gem 'therubyracer'
 gem 'bluecloth'
 
 group :development, :test do
@@ -32,7 +31,6 @@ group :development, :test do
 end
 
 group :production do
-  gem 'therubyracer-heroku'
   gem 'pg'
 end
 
